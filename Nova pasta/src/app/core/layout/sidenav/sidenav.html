@@ -1,0 +1,52 @@
+<mat-drawer-container autosize class="sidenav-container">
+  <mat-drawer
+    #drawer
+    [opened]="isMobile() ? isOpened() : true"
+    [mode]="isMobile() ? 'over' : 'side'"
+    class="sidenav"
+    [style.width.px]="isCollapsed() ? 80 : 280"
+  >
+    <div class="sidenav-brand">
+      <!-- <button class="brand-mark" (click)="toggleMenu()">LA</button> -->
+      <span class="brand-mark">LA</span>
+
+      @if (!isCollapsed()) {
+        <div class="brand-name">
+          <strong class="brand-title">Lorenzo Adamoli</strong>
+          <span class="brand-subtitle">Guindastes & Acessórios</span>
+        </div>
+      }
+    </div>
+    <mat-nav-list aria-label="Menu principal" class="sidenav-menu">
+      <a mat-list-item routerLink="/orcamentos" routerLinkActive="active" class="sidenav-menu-item">
+        <mat-icon matListItemIcon> payments </mat-icon>Orçamento
+      </a>
+      <a mat-list-item routerLink="/dashboard" routerLinkActive="active" class="sidenav-menu-item">
+        <mat-icon matListItemIcon> contact_page </mat-icon>Adicionar Contato
+      </a>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <!-- MOBILE -->
+    @if (isMobile()) {
+      <mat-toolbar>
+        <button
+          matIconButton
+          class="example-icon"
+          aria-label="Example icon-button with menu icon"
+          (click)="toggleMenu()"
+        >
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span class="example-spacer"></span>
+        <button
+          matIconButton
+          class="example-icon favorite-icon"
+          aria-label="Example icon-button with heart icon"
+        ></button>
+      </mat-toolbar>
+    }
+    <app-header />
+    <router-outlet />
+  </mat-drawer-content>
+</mat-drawer-container>

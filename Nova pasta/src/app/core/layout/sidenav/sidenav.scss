@@ -10,13 +10,14 @@ mat-drawer {
 
 .sidenav {
   background: var(--surface);
+  border-radius: var(--radius);
   box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
   padding: 16px;
 }
 
-.sidenav-user {
+.sidenav-brand {
   display: flex;
   gap: 12px;
   align-items: center;
@@ -24,25 +25,25 @@ mat-drawer {
   border-bottom: 1px solid var(--border);
 }
 
-.sidenav-user div {
+.sidenav-brand div {
   display: grid;
   gap: 2px;
 }
 
-.user-avatar {
+.brand-mark {
   display: grid;
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   place-items: center;
   border: 1px solid #c7d7fe;
-  border-radius: 50%;
+  border-radius: var(--radius);
   color: var(--primary);
   background: #eef4ff;
   font-size: 0.82rem;
   font-weight: 800;
 }
 
-.user-name {
+.brand-name {
   strong {
     color: var(--text);
     font-size: 0.98rem;
@@ -71,14 +72,4 @@ mat-drawer {
       border-right-color: var(--primary);
     }
   }
-}
-
-// .sidenav-menu-item.collapsed {
-//   padding-inline: 0;
-// }
-
-.sidenav-menu-item.collapsed .mdc-list-item__content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

@@ -7,7 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Header } from '../header/header';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterOutlet } from "../../../../../node_modules/@angular/router/types/_router_module-chunk";
 
 @Component({
   selector: 'app-sidenav',
@@ -17,11 +17,9 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
     MatListModule,
     MatButtonModule,
     MatToolbarModule,
+    Header,
     MatExpansionModule,
-    RouterOutlet,
-    RouterLink,
-    RouterLinkActive,
-    Header
+    RouterOutlet
 ],
   templateUrl: './sidenav.html',
   styleUrl: './sidenav.scss',
@@ -46,6 +44,6 @@ export class Sidenav {
   }
 
   toggleMenu() {
-    this.isCollapsed.set(!this.isCollapsed());
+    this.isOpened.set(!this.isOpened());
   }
 }
