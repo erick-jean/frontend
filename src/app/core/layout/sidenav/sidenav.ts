@@ -8,6 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { Header } from '../header/header';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-sidenav',
@@ -21,7 +22,7 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
     RouterOutlet,
     RouterLink,
     RouterLinkActive,
-    Header
+    Header,
 ],
   templateUrl: './sidenav.html',
   styleUrl: './sidenav.scss',
@@ -34,7 +35,7 @@ export class Sidenav {
   isCollapsed = signal(false);
 
   constructor() {
-    this.breakpointObserver.observe('(max-width: 768px)').subscribe((result) => {
+    this.breakpointObserver.observe('(max-width: 768px)').pipe(takeUntilDestroyed()).subscribe((result) => {
       this.isMobile.set(result.matches);
 
       if (result.matches) {
