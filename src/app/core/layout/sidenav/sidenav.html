@@ -30,7 +30,12 @@
           <span class="sidenav-menu-text">Orçamento</span>
         }
       </a>
-      <a mat-list-item routerLink="/dashboard" routerLinkActive="active" class="sidenav-menu-item">
+      <a
+        mat-list-item
+        routerLink="/novo-contato"
+        routerLinkActive="active"
+        class="sidenav-menu-item"
+      >
         <mat-icon matListItemIcon>contact_page</mat-icon>
         <span class="sidenav-menu-text">Adicionar Contato</span>
       </a>
@@ -38,6 +43,6 @@
   </mat-drawer>
   <mat-drawer-content>
     <app-header (menuToggle)="toggleMenu()"></app-header>
-    <router-outlet />
+    <section class="content"><router-outlet /></section>
   </mat-drawer-content>
 </mat-drawer-container>

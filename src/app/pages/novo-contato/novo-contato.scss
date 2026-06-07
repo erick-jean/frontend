@@ -1,0 +1,157 @@
+.container-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+
+.topbar-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.actions{
+    display: flex;
+    gap: 12px;
+}
+
+.credits-card {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 6px;
+  background: var(--surface);
+}
+
+.credits-card div {
+  display: grid;
+  min-width: 92px;
+  gap: 2px;
+  border-radius: 6px;
+  padding: 5px 8px;
+  background: var(--surface-soft);
+}
+
+.credits-card span {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.credits-card strong {
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.bling-card {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid #fedf89;
+  border-radius: var(--radius);
+  padding: 6px;
+  background: #fffaeb;
+}
+
+.bling-card.connected {
+  border-color: #abefc6;
+  background: #ecfdf3;
+}
+
+.bling-card div {
+  display: grid;
+  min-width: 116px;
+  gap: 2px;
+  border-radius: 6px;
+  padding: 5px 8px;
+}
+
+.bling-card span {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.bling-card strong {
+  color: #b54708;
+  font-size: 0.9rem;
+}
+
+.bling-card.connected strong {
+  color: #067647;
+}
+
+button {
+  min-height: 46px;
+  border: 0;
+  border-radius: var(--radius);
+  padding: 0 18px;
+  color: #ffffff;
+  background: var(--text);
+  font-weight: 800;
+  transition:
+    background 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease,
+    opacity 0.18s ease;
+}
+
+button:hover:not(:disabled) {
+  background: #1d2939;
+  box-shadow: 0 12px 24px rgba(16, 24, 40, 0.16);
+  transform: translateY(-1px);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button:disabled {
+  cursor: progress;
+  opacity: 0.72;
+}
+
+.ghost {
+  border: 1px solid var(--border);
+  color: var(--muted-strong);
+  background: var(--surface);
+}
+
+.ghost:hover:not(:disabled) {
+  color: var(--text);
+  background: var(--surface-soft);
+}
+
+.compact {
+  min-height: 34px;
+  padding: 0 12px;
+  font-size: 0.82rem;
+}
+
+.section-title {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.eyebrow {
+  margin: 0 0 5px;
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
