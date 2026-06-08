@@ -84,6 +84,25 @@ mat-drawer {
   }
 }
 
-.content {
-  padding: 46px;
+  .mat-drawer-content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;  
+
+    section.content {
+      padding: 24px;
+      display: flex;
+      justify-content: center
+    }
+
+    div{
+      max-width: 1200px;
+      width: 100%;
+    }
+  }
+
+@media (max-width: 768px) {
+  .content {
+    padding: 24px;
+  }
 }

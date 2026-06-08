@@ -43,6 +43,9 @@
   </mat-drawer>
   <mat-drawer-content>
     <app-header (menuToggle)="toggleMenu()"></app-header>
-    <section class="content"><router-outlet /></section>
+
+    <section class="content">
+      <div><router-outlet /></div>
+    </section>
   </mat-drawer-content>
 </mat-drawer-container>

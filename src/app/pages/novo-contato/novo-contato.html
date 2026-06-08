@@ -25,5 +25,32 @@
     </div>
   </div>
 
-  <div class="search-contact"></div>
+  <div class="search-contact">
+    <form class="form-contact">
+      <mat-form-field appearance="outline"subscriptSizing="fixed">
+        <mat-label>CNPJ</mat-label>
+        <input
+          type="text"
+          matInput
+          inputmode="numeric"
+          [formControl]="cnpjFormControl"
+          [errorStateMatcher]="matcher"
+          mask="00.000.000/0000-00"
+          placeholder="CNPJ com ou sem máscara"
+        />
+
+        @if (cnpjFormControl.hasError('cnpjInvalid')) {
+          <mat-error> CNPJ inválido </mat-error>
+        }
+
+        @if (cnpjFormControl.hasError('required')) {
+          <mat-error>CNPJ é <strong>obrigatório</strong></mat-error>
+        }
+      </mat-form-field>
+      <button type="submit" class="btn-submit">Consultar CNPJ</button>
+      <!-- <button type="submit" [disabled]="isConsulting">
+        {{ isConsulting ? 'Consultando...' : 'Consultar CNPJ' }}
+      </button> -->
+    </form>
+  </div>
 </div>
