@@ -1,1 +1,198 @@
-<p>orcamentos works!</p>
+<section class="section-title">
+  <p class="eyebrow">Proposta Comercial</p>
+  <h1>Proposta Guindaste PHD</h1>
+</section>
+<form action="" [formGroup]="form">
+  <div class="form-group">
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Data</mat-label>
+      <input
+        matInput
+        readonly
+        formControlName="dateControl"
+        [matDatepicker]="picker"
+        maxlength="10"
+        placeholder="dd/mm/aaaa"
+      />
+      @if (form.controls.dateControl.hasError('required')) {
+        <mat-error>Data é obrigatória</mat-error>
+      }
+
+      @if (form.controls.dateControl.hasError('invalidDate')) {
+        <mat-error>Data inválida</mat-error>
+      }
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Proposta</mat-label>
+      <input matInput maxlength="15" />
+    </mat-form-field>
+  </div>
+  <h2>Dados de Identificação e Contato</h2>
+  <div class="form-group">
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Nome</mat-label>
+      <input matInput placeholder="Ex. João Silva" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>CNPJ/CPF</mat-label>
+      <input matInput placeholder="Ex. João Silva" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Ins. Estadual/RG</mat-label>
+      <input matInput placeholder="Ex. João Silva" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>CEP</mat-label>
+      <input matInput placeholder="Ex. João Silva" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Rua</mat-label>
+      <input matInput placeholder="Ex. João Silva" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Nº</mat-label>
+      <input matInput placeholder="Ex. João Silva" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Bairro</mat-label>
+      <input matInput placeholder="Ex. João Silva" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Cidade</mat-label>
+      <input matInput placeholder="Ex. João Silva" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Estado</mat-label>
+      <input matInput placeholder="Ex. João Silva" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Telefone Fixo</mat-label>
+      <input matInput placeholder="Ex. João Silva" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Telefone celular</mat-label>
+      <input matInput placeholder="Ex. João Silva" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Nome do contato</mat-label>
+      <input matInput placeholder="Ex. João Silva" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>E-mail</mat-label>
+      <input matInput placeholder="Ex. João Silva" />
+    </mat-form-field>
+  </div>
+  <h2>Dados do equipamento</h2>
+
+  <div class="form-group">
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Quantidade</mat-label>
+      <input matInput placeholder="Ex. 1" inputmode="numeric" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Modelo do Equipamento</mat-label>
+      <mat-select>
+        @for (modelosEquipamento of modelosEquipamentos; track modelosEquipamento) {
+          <mat-option [value]="modelosEquipamento.modelo"
+            >{{ modelosEquipamento.modelo }}-{{ modelosEquipamento.descricao }}</mat-option
+          >
+        }
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Sistema de abertura de lanças hidráulicas</mat-label>
+      <mat-select>
+        <mat-option value="individual">Individual</mat-option>
+        <mat-option value="sequencial">Sequencial</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Conjunto de Sapata Traseira</mat-label>
+      <mat-select>
+        <mat-option value="sem_sapata_traseira">sem sapata traseira</mat-option>
+        <mat-option value="sapatas_fixado_chassi_cilindro_articulado"
+          >sapatas fixado no chassi com cilindro articulado</mat-option
+        >
+        <mat-option value="extensao_manual_cilindro_fixo"
+          >extensão manual com cilindro fixo</mat-option
+        >
+        <mat-option value="extensao_manual_cilindro_articulado"
+          >extensão manual com cilindro articulado</mat-option
+        >
+        <mat-option value="extensao_hidraulica_cilindro_fixo"
+          >extensão hidraulica com cilindro fixo</mat-option
+        >
+        <mat-option value="extensao_hidraulica_cilindro_articulado"
+          >extensão hidraulica com cilindro articulado</mat-option
+        >
+        <mat-option value="extensao_hidraulica_dupla_cilindro_fixo"
+          >extensão hidraulica dupla com cilindro fixo</mat-option
+        >
+        <mat-option value="extensao_hidraulica_dupla_cilindro_articulado"
+          >extensão hidraulica dupla com cilindro articulado</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Bomba hidráulica</mat-label>
+      <input matInput placeholder="Ex. 1" inputmode="numeric" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Tomada de força</mat-label>
+      <input matInput placeholder="Ex. 1" inputmode="numeric" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Sobrequdro/ Sobrechassi</mat-label>
+      <mat-select>
+        <mat-option value="sem_sobrequadro">sem sobrequadro</mat-option>
+        <mat-option value="sem_sobrechassi">sem sobrechassi</mat-option>
+        <mat-option value="com_sobrequadro">com sobrequadro</mat-option>
+        <mat-option value="com_sobrechassi_7900mm">com sobrechassi de 7900mm</mat-option>
+        <mat-option value="com_sobrechassi_7900mm_reforco_lateral"
+          >com sobrechassi de 7900mm e reforço lateral</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Cor do equipamento</mat-label>
+      <mat-select>
+        <mat-option value="amarelo_padrao_phd">AMARELO PADRÃO PHD</mat-option>
+        <mat-option value="amarelo_ouro">AMARELO OURO</mat-option>
+        <mat-option value="amarelo_seg_5y8">AMARELO SEG 5Y8</mat-option>
+        <mat-option value="azul_arara">AZUL ARARA</mat-option>
+        <mat-option value="azul_del_rey">AZUL DEL REY</mat-option>
+        <mat-option value="azul_franca">AZUL FRANÇA</mat-option>
+        <mat-option value="azul_miro">AZUL MIRO</mat-option>
+        <mat-option value="azul_radar">AZUL RADAR</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Instalação veicular</mat-label>
+      <mat-select>
+        <mat-option value="instalacao_dianteira_sem_cabine_auxiliar"
+          >instalação dianteira sem cabine auxiliar</mat-option
+        >
+        <mat-option value="instalacao_dianteira_com_cabine_auxiliar"
+          >instalação dianteira com cabine auxiliar</mat-option
+        >
+        <mat-option value="instalacao_entre_1_e_2_eixo_direcional"
+          >instalação entre 1º e 2º eixo direcional</mat-option
+        >
+        <mat-option value="instalacao_dianteira_caminhao_e6"
+          >instalação dianteira em caminhão E6</mat-option
+        >
+        <mat-option value="instalacao_traseira">instalação traseira</mat-option>
+        <mat-option value="instalacao_especial_ver_observacoes"
+          >instalação especial - ver observações</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" subscriptSizing="fixed">
+      <mat-label>Estudo de Instalação Aprovado</mat-label>
+      <input matInput placeholder="Ex. 1" inputmode="numeric" />
+    </mat-form-field>
+  </div>
+</form>

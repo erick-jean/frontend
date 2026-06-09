@@ -2,10 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  padding: 24px;
-  background: var(--surface);
-  box-shadow: var(--shadow);
-  border-radius: var(--radius);
 }
 
 .topbar-actions {
@@ -136,24 +132,6 @@ button:disabled {
   min-height: 34px;
   padding: 0 12px;
   font-size: 0.82rem;
-}
-
-.section-title {
-  display: flex;
-  gap: 4px;
-  flex-direction: column;
-
-  h1 {
-    margin: 0;
-  }
-}
-
-.eyebrow {
-  margin: 0 0 5px;
-  color: var(--primary);
-  font-size: 0.78rem;
-  font-weight: 800;
-  text-transform: uppercase;
 }
 
 .search-contact {

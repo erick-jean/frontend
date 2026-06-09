@@ -1,0 +1,9 @@
+.section-title {
+  padding-bottom: 26px;
+}
+.form-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  flex-direction: row;
+}

@@ -25,6 +25,19 @@
       outlined-container-shape: var(--radius),
     )
   );
+  @include mat.datepicker-overrides(
+    (
+      calendar-container-background-color: #e9e7eb,
+      calendar-container-touch-elevation-shadow: var(--shadow),
+      calendar-container-shape: var(--radius),
+    )
+  );
+  @include mat.select-overrides(
+    (
+      panel-background-color: #e9e7eb,
+      container-elevation-shadow: var(--shadow)
+    )
+  );
 }
 
 * {
@@ -64,4 +77,26 @@ button {
 ::selection {
   color: #ffffff;
   background: var(--primary);
+}
+
+.cdk-overlay-container .mat-mdc-tooltip {
+  display: none !important;
+}
+
+.section-title {
+  display: flex;
+  gap: 4px;
+  flex-direction: column;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.eyebrow {
+  margin: 0 0 5px;
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
